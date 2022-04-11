@@ -56,5 +56,5 @@ cp $WORK_DIR/*.fchk $OUT_DIR
 fi
 done
 #suppression du fichier .chk pour eviter d'encombrer le scratch
-rm $WORK_DIR/*.chk
+#rm $WORK_DIR/*.chk
 
