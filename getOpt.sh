@@ -19,9 +19,16 @@ OUT_DIR=$CURR_DIR/${SCRIPT%.com}
 #dossier de travail
 WORK_DIR=/scratch/$USER/${SCRIPT%.com}
 
-for i in $WORK_DIR/*.chk
+cd $WORK_DIR
+
+echo $WORK_DIR
+
+for i in `ls $WORK_DIR/*.chk 2>/dev/null` 
 do
-    #conversion pour récupérer les coordonnées de la dernière optimisation au format xyz
+	echo $i
+    #conversion pour recuperer les coordonnees de la derniere optimisation au format xyz
 	newzmat -ichk -oxyz -step 999 $i ${i%.chk}.opt
-	cp *.opt $OUT_DIR
 done
+
+cp ${WORK_DIR}/*.opt ${OUT_DIR}
+cd $CURR_DIR
