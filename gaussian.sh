@@ -19,7 +19,7 @@ OUT_DIR=$CURR_DIR/${SCRIPT%.com}
 
 #dossier de travail
 WORK_DIR=/scratch/$USER/${SCRIPT%.com}
-#creation du dossier de sortie et copie du fichier d'entrée.
+
 mkdir -p $OUT_DIR
 cp $SCRIPT $OUT_DIR
 
@@ -38,15 +38,23 @@ export GAUSS_SCRDIR=$WORK_DIR
 
 
 #execution du script
+cd $WORK_DIR
 g09 $WORK_DIR/$SCRIPT
+
+cd $CURR_DIR
+
 
 #rapatriement des fichiers dans le home
 cp $WORK_DIR/*.log $OUT_DIR
 cp $(basename $BASH_SOURCE) $OUT_DIR
 
 
-for i in `ls $CURR_DIR/*.chk 2>/dev/null` ; do
+for i in `ls $WORK_DIR/*.chk 2>/dev/null` ; do
 if [ ! -e `basename $i .chk`.fchk ] ; then
 /opt/g09/formchk $i 2>/dev/null
+cp $WORK_DIR/*.fchk $OUT_DIR
 fi
 done
+#suppression du fichier .chk pour eviter d'encombrer le scratch
+rm $WORK_DIR/*.chk
+
