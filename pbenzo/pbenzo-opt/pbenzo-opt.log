@@ -2,8 +2,8 @@
  Input=/scratch/mverot/pbenzo-opt/pbenzo-opt.com
  Output=/scratch/mverot/pbenzo-opt/pbenzo-opt.log
  Initial command:
- /opt/g09/l1.exe "/scratch/mverot/pbenzo-opt/Gau-2637854.inp" -scrdir="/scratch/mverot/pbenzo-opt/"
- Entering Link 1 = /opt/g09/l1.exe PID=   2637856.
+ /opt/g09/l1.exe "/scratch/mverot/pbenzo-opt/Gau-2695843.inp" -scrdir="/scratch/mverot/pbenzo-opt/"
+ Entering Link 1 = /opt/g09/l1.exe PID=   2695845.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -78,11 +78,12 @@
  Gaussian 09:  AM64L-G09RevD.01 24-Apr-2013
                 11-Apr-2022 
  ******************************************
- ---------------------
- #n AM1 Opt symm=loose
- ---------------------
+ %chk=pbenzo-opt
+ ----------
+ #n AM1 Opt
+ ----------
  1/14=-1,18=20,19=15,26=1,38=1/1,3;
- 2/9=110,12=2,17=4,18=3,40=1/2;
+ 2/9=110,12=2,17=6,18=5,40=1/2;
  3/5=2,16=1,25=1,41=700000,71=1/1,2,3;
  4/35=1/1;
  5/5=2,35=1,38=5/2;
@@ -624,16 +625,26 @@
  ---------------------------------------------------------------------
  Rotational constants (GHZ):      5.3276384      1.6315700      1.2490522
  1\1\GINC-GTX1080DELTA\FOpt\RAM1\ZDO\C6H4O2\MVEROT\11-Apr-2022\0\\#n AM
- 1 Opt symm=loose\\Optimisation of pbenzoquinone using the AM1 hamilton
- ian\\0,1\O,2.6884949,0.,0.\O,-2.6884949,0.,0.\C,1.4529083,0.,0.\C,-1.4
- 529083,0.,0.\C,0.6690595,0.,-1.254776\C,0.6690595,0.,1.254776\C,-0.669
- 0595,0.,-1.254776\C,-0.6690595,0.,1.254776\H,1.2578352,0.,-2.18723\H,1
- .2578352,0.,2.18723\H,-1.2578352,0.,-2.18723\H,-1.2578352,0.,2.18723\\
- Version=AM64L-G09RevD.01\State=1-AG\HF=-0.040191\RMSD=4.763e-09\RMSF=1
- .393e-04\Dipole=0.,0.,0.\PG=D02H [C2"(O1C1.C1O1),SG(C4H4)]\\@
+ 1 Opt\\Optimisation of pbenzoquinone using the AM1 hamiltonian\\0,1\O,
+ 2.6884949,0.,0.\O,-2.6884949,0.,0.\C,1.4529083,0.,0.\C,-1.4529083,0.,0
+ .\C,0.6690595,0.,-1.254776\C,0.6690595,0.,1.254776\C,-0.6690595,0.,-1.
+ 254776\C,-0.6690595,0.,1.254776\H,1.2578352,0.,-2.18723\H,1.2578352,0.
+ ,2.18723\H,-1.2578352,0.,-2.18723\H,-1.2578352,0.,2.18723\\Version=AM6
+ 4L-G09RevD.01\State=1-AG\HF=-0.040191\RMSD=4.763e-09\RMSF=1.393e-04\Di
+ pole=0.,0.,0.\PG=D02H [C2"(O1C1.C1O1),SG(C4H4)]\\@
 
 
- LOVE IS BLIND, THAT'S WHY ALL THE WORLD LOVES A LOUVER.
- Job cpu time:       0 days  0 hours  0 minutes  1.2 seconds.
+ OUR LITTLE SYSTEMS HAVE THEIR DAY,    
+   THEY HAVE THEIR DAY AND CEASE TO BE.
+   THEY ARE BUT BROKEN LIGHTS OF THEE, 
+ AND THOU, OH LORD, ART MORE THAN THEY.
+          -------------------          
+ LET KNOWLEDGE GROW FROM MORE TO MORE, 
+   BUT MORE OF REVERENCE IN US DWELL.  
+   THAT MIND AND SOUL, ACCORDING WELL, 
+ MAY MAKE ONE MUSIC AS BEFORE.....     
+          -------------------          
+                    LORD TENNYSON      
+ Job cpu time:       0 days  0 hours  0 minutes  1.3 seconds.
  File lengths (MBytes):  RWF=     72 Int=      0 D2E=      0 Chk=      3 Scr=      2
- Normal termination of Gaussian 09 at Mon Apr 11 14:03:58 2022.
+ Normal termination of Gaussian 09 at Mon Apr 11 18:22:11 2022.

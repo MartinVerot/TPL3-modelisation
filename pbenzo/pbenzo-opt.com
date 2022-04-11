@@ -1,4 +1,5 @@
-#n AM1 Opt symm=loose
+%chk=pbenzo-opt
+#n AM1 Opt 
 
 Optimisation of pbenzoquinone using the AM1 hamiltonian
 
