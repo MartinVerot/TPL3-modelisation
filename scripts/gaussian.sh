@@ -29,9 +29,9 @@ mkdir -p $WORK_DIR
 cp $SCRIPT $WORK_DIR 
 
 #Environnement pour Gaussian
-export g09root=/opt
+export g16root=/opt
 #Chargement de variable
-. $g09root/g09/bsd/g09.profile
+. $g16root/g16/bsd/g16.profile
 #definition du dossier de travail
 export GAUSS_SCRDIR=$WORK_DIR
 
