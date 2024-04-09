@@ -4,7 +4,7 @@
 #Environnement pour Gaussian
 export g16root=/opt
 #Chargement de variable
-. $g09root/g16/bsd/g16.profile
+. $g16root/g16/bsd/g16.profile
 #definition du dossier de travail
 export GAUSS_SCRDIR=$WORK_DIR
 
