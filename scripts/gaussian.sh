@@ -39,7 +39,7 @@ export GAUSS_SCRDIR=$WORK_DIR
 
 #execution du script
 cd $WORK_DIR
-g09 $WORK_DIR/$SCRIPT
+g16 $WORK_DIR/$SCRIPT
 
 cd $CURR_DIR
 
@@ -51,7 +51,7 @@ cp $(basename $BASH_SOURCE) $OUT_DIR
 
 for i in `ls $WORK_DIR/*.chk 2>/dev/null` ; do
 #if [ ! -e `basename $i .chk`.fchk ] ; then
-/opt/g09/formchk $i 2>/dev/null
+/opt/g16/formchk $i 2>/dev/null
 #fi
 done
 cp $WORK_DIR/*.fchk $OUT_DIR
