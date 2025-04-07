@@ -125,7 +125,7 @@ Nous détaillons la procédure pour CH<sub>3</sub>Cl:
 <li> Mesurer la distance C-Cl et l’angle ClCH. Comparer aux données expérimentales.
 <li> Pour obtenir une structure plus réaliste minimisant l’énergie de cette molécule (et qui ne dépend pas de vos talents de dessinateur), on peut employer différentes méthodes de modélisation:
 <ul> 
-<li> La première est une optimisation de géométrie utilisant un jeu de paramètres regroupés dans un champ de force issu de la mécanique moléculaire (MM, voir par exemple <a href="https://gaussian.com/mm/">lien</a>). Elle se situe dans <tt>Extensions > OpenBabel > Optimisation de la géométrie</tt>. Relever de nouveau les distances après avoir réalisé cette optimisation de géométrie. Le jeu de paramètres peut être modifié dans <tt>Extensions > OpenBabel >  Configurer le champ de force</tt>. Lister les champs de forces disponibles dans Avogadro. Optimisez en UFF (<em>United Force Field</em>). <!-- Reporter l’énergie (E=) son gradient (dE) et les distances C-H et C-Cl. --> Recommencez avec un autre champ de forces. Comparer <a href="https://cccbdb.nist.gov/alldata1.asp">aux valeurs expérimentales</a>. <!-- Une autre manière d’y accéder est de cliquer sur l’icône « E » qui donne accès à ‘Auto Optimization Tool’. -->
+<li> La première est une optimisation de géométrie utilisant un jeu de paramètres regroupés dans un champ de force issu de la mécanique moléculaire (MM, voir par exemple <a href="https://gaussian.com/mm/">lien</a>). Elle se situe dans <tt>Extensions > OpenBabel > Optimisation de la géométrie</tt>. <b>Relever de nouveau les distances après avoir réalisé cette optimisation de géométrie.</b> Le jeu de paramètres peut être modifié dans <tt>Extensions > OpenBabel >  Configurer le champ de force</tt>. Lister les champs de forces disponibles dans Avogadro. Optimisez en UFF (<em>United Force Field</em>). <!-- Reporter l’énergie (E=) son gradient (dE) et les distances C-H et C-Cl. --> <b>Recommencez avec un autre champ de forces. Comparer <a href="https://cccbdb.nist.gov/alldata1.asp">aux valeurs expérimentales</a></b>. <!-- Une autre manière d’y accéder est de cliquer sur l’icône « E » qui donne accès à ‘Auto Optimization Tool’. -->
 <li> La seconde va impliquer une description électronique plus fine, et donc plus coûteuse, car cette méthode de chimie quantique spécifie un hamiltonien. On verra au fur et à mesure des cours de Chimie Théorique (L3 & M1) qu’on dispose de trois grandes familles de méthodes: 
 <ul>
 <li>les méthodes semi-empiriques : la méthode de Hückel est de ce type, mais limitée au système &pi;.</li>
@@ -187,7 +187,8 @@ Optimisation of chloromethane using the AM1 hamiltonian
 </div>
 
 <li> S'assurer qu’un fichier de sortie est apparu, correspond à un calcul terminé normalement et l'ouvrir avec un éditeur de texte. Découvrir et lister les informations d’intérêt qui n’étaient pas présentes dans le calcul précédent: vérifier que le fichier d’entrée a bien été lu, retrouver la géométrie fournie, les critères utilisés pour arrêter la procédure d’optimisation de géométrie, l’énergie électronique obtenue à chaque pas d’optimisation, la géométrie finale.
-<li> Ouvrir le fichier <tt>CH3Cl_opt.log</tt> avec gmolden. Suivre l’évolution de la distance C-H et C-Cl au cours de l’optimisation de géométrie (sous molden, cliquer sur "geom conv" puis cliquer sur les différentes géométries, il est possible de cliquer sur "Forces" pour voir les forces lors de l'optimisation ).
+<li> Ouvrir le fichier <tt>CH3Cl_opt.log</tt> avec gmolden. Suivre l’évolution de la distance C-H et C-Cl au cours de l’optimisation de géométrie (sous molden, cliquer sur "geom conv" puis cliquer sur les différentes géométries, il est possible de cliquer sur "Forces" pour voir les forces lors de l'optimisation).
+<li><b>Mesurer la distance C-Cl et l’angle ClCH. Comparer aux données expérimentales.</b></li>
 <li> En partant de la géométrie optimisée, préparer un fichier d’entrée pour un calcul de fréquence (mot-clé « freq=RAMAN » pour avoir les intensités Raman calculées) sous le nom CH3Cl_freq.com puis lancez le calcul. (On ne détaillera pas ici le spectre Raman, qui sera abordé en cours de Spectroscopie L3). 
 
 <pre>
@@ -198,14 +199,14 @@ Optimisation of chloromethane using the AM1 hamiltonian
 
 </pre>
 
-<li> Ouvrir le fichier de sortie CH3Cl_freq.log avec un éditeur de texte. Vérifier que la symétrie reconnue est celle attendue. Si ce n’est pas le cas, vous pouvez rajouter le mot-clé symm=loose dans la liste des mots-clés après le # et relancer le calcul. (Si cela ne suffit toujours pas, vous pouvez repartir du fichier d'entrée donné plus haut). Découvrir et lister les informations d’intérêt nouvelles: fréquences, modes de vibration et symétrie associée, intensité IR et Raman, énergie de point zéro, fonction de partition vibrationnelle, moment d’inertie, température, enthalpie, entropie, enthalpie libre, etc.
-<li> Ouvrir le fichier CH3Cl_freq.log avec gmolden. Visualisez les modes normaux correspondant aux différentes fréquences en cliquant sur Norm. Freq.. Lesquelles sont actives en IR et/ou en Raman?
+<li> Ouvrir le fichier de sortie CH3Cl_freq.log avec un éditeur de texte. Vérifier que la symétrie reconnue est celle attendue. Si ce n’est pas le cas, vous pouvez rajouter le mot-clé symm=loose dans la liste des mots-clés après le # et relancer le calcul. (Si cela ne suffit toujours pas, vous pouvez repartir du fichier d'entrée donné plus haut). <b>Découvrir et lister les informations d’intérêt nouvelles: fréquences, modes de vibration et symétrie associée</b>, intensité IR et Raman, énergie de point zéro, fonction de partition vibrationnelle, moment d’inertie, température, enthalpie, entropie, enthalpie libre, etc.
+<li> Ouvrir le fichier CH3Cl_freq.log avec gmolden. Visualiser les modes normaux correspondant aux différentes fréquences en cliquant sur Norm. Freq.. Indiquer lesquelles sont actives en IR et/ou en Raman.
 <img src="gmolden-freq-2.png" alt="IR-molden">
-<li> Pour situer la performance de ce calcul, on peut le comparer <a href="https://webbook.nist.gov/cgi/cbook.cgi?ID=C74873&Units=SI&Mask=80#IR-Spec">au spectre expérimental</a>. <!-- Il est téléchargeable au format JCAMP-DX (extension .jdx) sur la base de données de la NIST. On cherchera à superposer spectre simulé et spectre expérimental : commenter sur le décalage, jouer sur la convolution par une gaussiane. --> On pourra s'aider pour cette comparaison du spectre "graphique", mais aussi du tableau listant les fréquences associées à chacun des modes normal de vibration (<a href="https://webbook.nist.gov/cgi/cbook.cgi?ID=C74873&Mask=800#Electronic-Spec">lien</a>).
+<li> Pour situer la performance de ce calcul, on peut <b>le comparer <a href="https://webbook.nist.gov/cgi/cbook.cgi?ID=C74873&Units=SI&Mask=80#IR-Spec">au spectre expérimental</a></b>. <!-- Il est téléchargeable au format JCAMP-DX (extension .jdx) sur la base de données de la NIST. On cherchera à superposer spectre simulé et spectre expérimental : commenter sur le décalage, jouer sur la convolution par une gaussiane. --> On pourra s'aider pour cette comparaison du spectre "graphique", mais aussi du tableau listant les fréquences associées à chacun des modes normal de vibration (<a href="https://webbook.nist.gov/cgi/cbook.cgi?ID=C74873&Mask=800#Electronic-Spec">lien</a>).
 <li>Il est possible d'extraire les données issues d'un calcul avec l'aide du script "extrac-freq.py" en utilisant par exemple :
 <pre>./extract-freq.py -f CH3Cl_freq.log</pre></li>
-<li> Pour améliorer l'accord expérience-théorie, on peut jouer sur la qualité du hamiltonien, en passant d'un niveau de calcul semi-empirique à une description plus robuste (ici la théorie de la fonctionnelle de la densité, DFT). En utilisant le fichier de sortie <a href="https://github.com/MartinVerot/TPL3-modelisation/blob/master/TP1/CH3Cl/CH3Cl_freq/ch3cl-dft-opt-freq.log">ch3cl-dft-opt-freq.log</a>. Cela permet-il d'améliorer l'accord ? 
-<li> Pour aller au-delà de l'approximation harmonique, Gaussian permet de prendre en compte des corrections anharmoniques via la commande <tt>freq=anharm</tt>. En utilisant le fichier de sortie donné ici (<a href="https://github.com/MartinVerot/TPL3-modelisation/blob/master/TP1/CH3Cl/CH3Cl_freq/chcl3-dft-freq-anharm.log">chcl3-dft-freq-anharm.log</a>, commenter sur l'impact de ces corrections. On constatera que cette correction coûte très cher en temps de calculs... 
+<li> Pour améliorer l'accord expérience-théorie, on peut jouer sur la qualité du hamiltonien, en passant d'un niveau de calcul semi-empirique à une description plus robuste (ici la théorie de la fonctionnelle de la densité, DFT). En utilisant le fichier de sortie <a href="https://github.com/MartinVerot/TPL3-modelisation/blob/master/TP1/CH3Cl/CH3Cl_freq/ch3cl-dft-opt-freq.log">ch3cl-dft-opt-freq.log</a>, <b>comparer aux données expérimentales.</b> . Cela permet-il d'améliorer l'accord ? 
+<li> Pour aller au-delà de l'approximation harmonique, Gaussian permet de prendre en compte des corrections anharmoniques via la commande <tt>freq=anharm</tt>. En utilisant le fichier de sortie donné ici (<a href="https://github.com/MartinVerot/TPL3-modelisation/blob/master/TP1/CH3Cl/CH3Cl_freq/chcl3-dft-freq-anharm.log">chcl3-dft-freq-anharm.log</a>, <b>commenter sur l'impact de ces corrections.</b> On constatera que cette correction coûte très cher en temps de calculs... 
 </ol> 
 
 
@@ -241,7 +242,7 @@ Dans cette partie, nous allons nous intéresser à des colorants à base de moti
 </a>
 
 <li> Construire cette molécule en sélectionnant la bibliothèque de fragments disponible dans Avogadro (Construction/Insérer/Fragments>ketones). Sinon, utiliser <a href="https://github.com/MartinVerot/TPL3-modelisation/blob/master/TP1/pbenzo/pbenzo.xyz">le fichier xyz </a>.
-<li> Optimiser la géométrie de cette molécule au niveau AM1. Demandez à générer le checkpoint (en ajoutant la ligne %chk=#Nom_de_votre_fichier_com_mais_sans_extension#). Relever ses caractéristiques géométriques et comparer aux données fournies dans les bases de données . 
+<li> Optimiser la géométrie de cette molécule au niveau AM1. Demandez à générer le checkpoint (en ajoutant la ligne %chk=#Nom_de_votre_fichier_com_mais_sans_extension#). <b>Relever ses caractéristiques géométriques et comparer aux données fournies dans les bases de données.</b> 
 <li>Pour réutiliser les coordonnées de la dernière optimisation de géométrie, utiliser l'utilitaire "newzmat" avec le script <a href="https://github.com/MartinVerot/TPL3-modelisation/blob/master/scripts/getOpt.sh">getOpt.sh</a>.</li>
 <li> Pour visualiser les orbitales moléculaires, on réalise un calcul "single point" au même niveau de calcul. Demandez à générer le checkpoint (en ajoutant la ligne %chk=#Nom_de_votre_fichier_com_mais_sans_extension#). Pour visualiser sous molden, utilisez les mots-clés suivant :
 <div> 
@@ -254,7 +255,7 @@ Visualisez les orbitales moléculaires avec gmolden, en ouvrant le fichier .log
 
 <img src="images/gmolden-orbs-2.png" alt="gmolden view orbitals">
 
-Pour connaître les charges partielles et les énergies des orbitales, il faut lire le .log avec un éditeur de texte. Pour trouver les numéros des atomes, utilisez les options de Display Settings, Label. Identifier les orbitales moléculaires d’intérêt. Quel type de transition attendez-vous pour une excitation dans l’UV-vis ?
+Pour connaître les charges partielles et les énergies des orbitales, il faut lire le .log avec un éditeur de texte. Pour trouver les numéros des atomes, utilisez les options de Display Settings, Label. <b>Identifier les orbitales moléculaires d’intérêt. Quel type de transition attendez-vous pour une excitation dans l’UV-vis ?</b>
 
 <li> Calculer le spectre UV-vis en faisant un simple point au niveau ZINDO avec le mot-clé: ZINDO(NState=10) pour effectuer un calcul semi-empirique des 10 premières excitations sur la géométrie optimisée. Pensez à garder la ligne %chk pour visualiser après les OMs réellement utilisées par ZINDO. On pourra s'aider de la commande :
 <div> 
@@ -262,7 +263,7 @@ Pour connaître les charges partielles et les énergies des orbitales, il faut 
 grep 'Excited State' fichier-de-sortie.log
 </pre>
 </div> pour récupérer les différentes énergies. Il est également possible de regarder le spectre UV-visible avec gmolden (cliquer sur UV Spectrum en haut à droite de la fenêtre de contrôle)
-Quelle couleur prédisez-vous?
+<b>Lister les transitions et prédire la couleur de cette molécule.</b>
 
 <br><br> 
 <a name="visu">
@@ -272,7 +273,7 @@ Quelle couleur prédisez-vous?
 <br> 
 <li> Construire cette molécule en utilisant la structure fournie par Chemistry Webbook.
 De nouveau, optimiser la structure, visualiser les orbitales moléculaires et calculer le spectre UV-vis au même niveau de théorie que précédemment.
-Comparer.
+<b>Comparer au spectre précédent.</b>
 
 
 <br><br> 
@@ -281,14 +282,14 @@ Comparer.
 </a>
 
 <br> 
-<li> Pour étudier l’impact de la substitution sur les cycles aromatiques par deux groupements hydroxyls (C14H8O4), choisir quelques isomères pour sonder l’impact de l’emplacement des deux groupes hydroxyls sur le spectre UV-vis que vous calculerez. (Dans le dossier, <a href="https://commons.wikimedia.org/wiki/File:Anthracene-numbering.svg">la numérotation choisie est celle de l'anthracène</a>)
+<li> Pour étudier l’impact de la substitution sur les cycles aromatiques par deux groupements hydroxyls (C14H8O4), <b>choisir quelques isomères pour sonder l’impact de l’emplacement des deux groupes hydroxyls sur le spectre UV-vis que vous calculerez.</b> (Dans le dossier, <a href="https://commons.wikimedia.org/wiki/File:Anthracene-numbering.svg">la numérotation choisie est celle de l'anthracène</a>)
 
 <br>Les scripts <a href="https://github.com/MartinVerot/TPL3-modelisation/blob/master/TP1/anthra-modif/get-multiple-opts.sh">get-multiple-opts.sh</a> (qui utilise getOpt.sh) peuvent vous aider à traiter simultanément plusieurs optimisations pour récupérer les coordonnées. <a href="https://github.com/MartinVerot/TPL3-modelisation/blob/master/scripts/make-multiple-zindo.sh">make-multiple-zindo.sh</a> vous aidera à créer plusieurs fichier d'input zindo avec les coordonnées récupérées.<br><br>
 
 
 
- Remplacer ces groupes par des groupements amino. Comment évolue la couleur prévue?
-Quel substituant proposeriez-vous pour un colorant rouge? bleu?
+ <b>Remplacer ces groupes par des groupements amino. Comment évolue la couleur prévue?</b>
+<b>Quel substituant proposeriez-vous pour un colorant rouge? bleu?</b>
 
 </ol>
 
@@ -301,7 +302,7 @@ Quel substituant proposeriez-vous pour un colorant rouge? bleu?
 
 <br><br>
 Le motif azobenzène est simple (deux groupements phényles reliés par une liaison azo -N=N-), 
-mais a fait l'objet d'un grand nombre d'étude en chimie des états excités, au meme titre que les diaryléthènes. En jouant sur ce motif simple, il est par exemple possible d'induire un mouvement mécanique à large échelle sur un cristal de manière photoinduite (Koshima et al., J. Am. Chem. Soc., 2009, 131, 20, 6890–6891 : <a href="https://pubs.acs.org/doi/10.1021/ja8098596">lien</a>. 
+mais a fait l'objet d'un grand nombre d'étude en chimie des états excités, au même titre que les diaryléthènes. En jouant sur ce motif simple, il est par exemple possible d'induire un mouvement mécanique à large échelle sur un cristal de manière photoinduite (Koshima et al., J. Am. Chem. Soc., 2009, 131, 20, 6890–6891 : <a href="https://pubs.acs.org/doi/10.1021/ja8098596">lien</a>. 
 
 <br> 
 Cette partie est également en lien avec l'article de recherche suivant: <a href="https://pubs.rsc.org/en/content/articlelanding/2016/cc/c6cc04004g#!divAbstract">lien<a/> (le pdf est sur le site etudes.) . 
@@ -309,10 +310,10 @@ On va chercher à estimer les propriétés spectroscopiques et d'ouverture ferme
 
 <ol>
 <li> Construire la molécule "prototype" d'azobenzène avec le pont azo en configuration trans. Même question pour la forme cis. 
-<li> Lancer les deux optimisations de géométrie au niveau de théorie AM1 : commenter sur l'écart énergétique entre les deux formes. On proposera une comparaison avec les données expérimentales en utilisant une recherche sur le webbook de la NIST. 
-<li> Lire dans le fichier Gaussian de sortie le moment dipolaire et comparer aux valeurs expérimentales. Quelle stratégie pourriez-vous suggérer pour favoriser l'isomère cis ? 
+<li> Lancer les deux optimisations de géométrie au niveau de théorie AM1 : <b>commenter sur l'écart énergétique entre les deux formes</b>. On proposera une comparaison avec les données expérimentales en utilisant une recherche sur le webbook de la NIST. 
+<li> <b>Lire dans le fichier Gaussian de sortie le moment dipolaire et comparer aux valeurs expérimentales.</b> <b>Quelle stratégie pourriez-vous suggérer pour favoriser l'isomère cis ? </b>
 <li> On peut estimer le profil de rotation en utilisant, hors des points stationnaires, une contrainte. Elle peut se spécifier  comme une rotation à angle dihèdre gelé. 
-<li> On peut maintenant jouer sur des effets de substituants pour favoriser ou au contraire bloquer la conversion cis <-> trans. Rationaliser ces effets, en lien avec la publication donnée plus haut. 
+<li> On peut maintenant jouer sur des effets de substituants pour favoriser ou au contraire bloquer la conversion cis <-> trans. <b>Rationaliser ces effets, en lien avec la publication donnée plus haut. </b>
 </ol>  
 
 
